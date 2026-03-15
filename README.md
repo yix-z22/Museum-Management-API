@@ -12,3 +12,16 @@ A RESTful backend built with **ASP.NET Core** and **Entity Framework Core** for 
 * **Backend:** C# / .NET
 * **Database:** SQLite / Entity Framework Core
 * **Tools:** Git, RESTful API Design
+
+## API Endpoints
+
+### Public Endpoints
+* `POST /webapi/Register` - Registers a new user. [cite_start]Includes validation to ensure unique usernames[cite: 16, 17].
+
+### Authenticated User Endpoints
+* [cite_start]`GET /webapi/Donation/{amount}` - Generates a donation certificate for logged-in users.
+
+### Staff-Only Endpoints (Basic Auth Required)
+* `POST /webapi/AddEvent` - Adds a new museum event. [cite_start]Validates date formats using Regex[cite: 17, 18].
+* [cite_start]`GET /webapi/EventCount` - Returns the total number of scheduled events.
+* [cite_start]`GET /webapi/Event/{id}` - Retrieves a specific event formatted as an iCalendar (RFC 5545) file[cite: 18].
